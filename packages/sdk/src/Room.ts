@@ -150,7 +150,7 @@ export class Room<
         });
     }
 
-    public connect(endpoint: string, options?: any, headers?: any) {
+    public connect(endpoint: string, options: any = {}, headers?: any) {
         this.connection = new Connection(options.protocol);
         this.connection.events.onmessage = this.onMessageCallback.bind(this);
         this.connection.events.onclose = (e: CloseEvent) => {
